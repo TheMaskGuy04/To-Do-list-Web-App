@@ -2,8 +2,8 @@
 Simple To do list web app
 
 Steps to follow:
-1. git clone https://github.com/TheMaskGuy04/To-Do-list-Web-App.git
-2. cd into the current directory
+1. cd into your directory in which you wanna clone the repo
+2. git clone https://github.com/TheMaskGuy04/To-Do-list-Web-App.git 
 3. npm i
 4. nodemon index.js
 5. copy this link in your browser http://localhost:3000/
