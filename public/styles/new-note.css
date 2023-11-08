@@ -1,0 +1,16 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: centers;
+    background-color: #190482;
+    color: #C2D9FF;
+}
+
+.container {
+    width: 30rem;
+    background-color: #7752FE;
+    border-radius: 25%;
+    padding: 5rem;
+}

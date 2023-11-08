@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+    background-color: #190482;
+    color: #C2D9FF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: centers;
+}
+
+.container {
+    /* margin-top: 1rem; */
+    background-color: #7752FE;
+    border-radius: 5%;
+    padding: 5rem;
+}
+
+.add {
+    /* margin: 2em; */
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    background-color: #7752FE;
+}
+
+.add a{
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 5px;
+    border: 4px solid #8E8FFA;
+    border-radius: 25%;
+    color: #C2D9FF;
+}
+
+.all-notes h2{
+    text-align: center;
+    padding: 0.5em;
+}
+
+.delete-update {
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+    gap: 15px;
+}
+
+.newNotes form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
