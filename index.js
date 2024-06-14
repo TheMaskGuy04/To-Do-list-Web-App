@@ -5,55 +5,55 @@ import { name } from "ejs";
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const title = [];
 const note = [];
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
-})
+  res.render("index.ejs", { title, note });
+});
 
 app.get("/new_note", (req, res) => {
-    res.render("new_note.ejs");
-})
+  res.render("new_note.ejs");
+});
 
 app.post("/submit", (req, res) => {
-    const new_title = req.body["title"];
-    const new_note = req.body["note"];
-    title.push(new_title);
-    note.push(new_note);
-    
-    // console.log(title);
-    // console.log(note);
+  const new_title = req.body["title"];
+  const new_note = req.body["note"];
+  title.push(new_title);
+  note.push(new_note);
 
-    res.render("index.ejs",{title, note});
-})
+  // console.log(title);
+  // console.log(note);
+  //   res.render("index.ejs", { title, note });
+  res.redirect("/");
+});
 
 app.post("/delete", (req, res) => {
-    console.log(req.body["update"]);
-    const id = parseInt(req.body["delete"]);
-    // console.log(typeof(id));
-    title.splice(id,1);
-    note.splice(id,1);
+  //   console.log(req.body["update"]);
+  const id = parseInt(req.body["delete"]);
+  // console.log(typeof(id));
+  title.splice(id, 1);
+  note.splice(id, 1);
 
-    console.log(title);
+  //   console.log(title);
 
-    res.render("index.ejs",{title, note});
-})
+  res.redirect("/");
+});
 
-app.post("/update", (req,res) => {
-    const id = parseInt(req.body["update"]);
-    const newTitle = title[id];
-    const newNote = note[id];
+app.post("/update", (req, res) => {
+  const id = parseInt(req.body["update"]);
+  const newTitle = title[id];
+  const newNote = note[id];
 
-    title.splice(id,1);
-    note.splice(id,1);
+  title.splice(id, 1);
+  note.splice(id, 1);
 
-    res.render("new_note.ejs", {newTitle, newNote});
-})
+  res.render("new_note.ejs", { newTitle, newNote });
+});
 
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-})
+  console.log(`Listening on port ${port}`);
+});
